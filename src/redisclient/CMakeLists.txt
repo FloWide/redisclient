@@ -34,13 +34,9 @@ else()
     PUBLIC
       REDIS_CLIENT_SEPARATED_COMPILATION
   )
-  target_include_directories(RedisClient
-    PUBLIC
-      ${Boost_INCLUDE_DIRS}
-  )
   target_link_libraries(RedisClient
     PUBLIC
-      ${Boost_SYSTEM_LIBRARY}
+    Boost::system
   )
 endif()
 

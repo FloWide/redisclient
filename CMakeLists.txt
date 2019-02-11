@@ -44,6 +44,11 @@ if (ADDRESS_SANITIZER)
   set(CMAKE_LD_FLAGS "-fsanitize=address")
 endif()
 
+if(HUNTER_ENABLED)
+  hunter_add_package(Boost COMPONENTS system)
+  find_package(Boost CONFIG REQUIRED system)
+else()
+
 if (MSVC)
   add_definitions(-DBOOST_ALL_NO_LIB)
 endif()
@@ -54,6 +59,8 @@ endif()
 
 # Find all of our dependencies
 include(cmake/Dependencies.cmake)
+
+endif()
 
 if (MSVC)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3")
