@@ -15,7 +15,7 @@ mark_as_advanced(VERSION_MAJOR VERSION_MINOR VERSION_PATCH VERSION)
 include(cmake/Utils.cmake)
 
 # Set the C++11 standard
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 11 CACHE STRING "Default C++ standard")
 
 # Build options
 option(ADDRESS_SANITIZER "Enable address sanitizer" OFF)
