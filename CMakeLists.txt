@@ -1,7 +1,7 @@
 # CMake script for RedisClient
 ############################################################
 
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.2)
 
 # Project and Versioning
 project(RedisClient)
