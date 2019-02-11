@@ -34,9 +34,10 @@ else()
     PUBLIC
       REDIS_CLIENT_SEPARATED_COMPILATION
   )
+  find_package(Threads REQUIRED)
   target_link_libraries(RedisClient
     PUBLIC
-    Boost::system
+    Boost::system Threads::Threads
   )
 endif()
 
