@@ -3,7 +3,7 @@ set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/${INSTALL_LIB_DIR})
 
 include(CMakePackageConfigHelpers)
 
-configure_package_config_file(cmake/config/Config.cmake.in
+configure_package_config_file(cmake/template/Config.cmake.in
     ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}Config.cmake
     INSTALL_DESTINATION share/${CMAKE_PROJECT_NAME}
     PATH_VARS INCLUDE_INSTALL_DIR LIB_INSTALL_DIR)
