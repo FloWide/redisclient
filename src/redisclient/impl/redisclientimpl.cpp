@@ -528,7 +528,7 @@ void RedisClientImpl::asyncRead(const boost::system::error_code &ec, const size_
 
         if( result.second == RedisParser::Completed )
         {
-            doProcessMessage(redisParser.result());
+            post(std::bind(&RedisClientImpl::doProcessMessage, shared_from_this(), redisParser.result()));
         }
         else if( result.second == RedisParser::Incompleted )
         {
